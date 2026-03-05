@@ -39,3 +39,16 @@ class TestCaesarCipher(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, expected_output)
+
+    def test_caesar_cipher_with_k_zero_should_return_same_string(self):
+        # Arrange
+        # Edge Case: ไม่มีการเลื่อน (k=0) ค่าที่ได้ต้องเหมือนเดิม
+        s = "abc"
+        k = 0
+        expected_output = "abc"
+        
+        # Act
+        result = caesarCipher(s, k)
+        
+        # Assert
+        self.assertEqual(result, expected_output)
