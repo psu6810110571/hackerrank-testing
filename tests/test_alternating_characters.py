@@ -35,3 +35,15 @@ class TestAlternatingCharacters(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, expected_output)
+
+    def test_alternating_characters_with_single_character_should_return_0(self):
+        # Arrange
+        # Edge Case: มีตัวอักษรเดียว ไม่มีอะไรให้ลบ ต้องคืนค่า 0
+        s = "A"
+        expected_output = 0
+        
+        # Act
+        result = alternatingCharacters(s)
+        
+        # Assert
+        self.assertEqual(result, expected_output)
