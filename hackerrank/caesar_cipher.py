@@ -1,35 +1,17 @@
-#!/bin/python3
-
-import math
-import os
-import random
-import re
-import sys
-
-#
-# Complete the 'caesarCipher' function below.
-#
-# The function is expected to return a STRING.
-# The function accepts following parameters:
-#  1. STRING s
-#  2. INTEGER k
-#
-
 def caesarCipher(s, k):
-    # Write your code here
-    pass
-
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
-    n = int(input().strip())
-
-    s = input()
-
-    k = int(input().strip())
-
-    result = caesarCipher(s, k)
-
-    fptr.write(result + '\n')
-
-    fptr.close()
+    result = []
+    
+    for char in s:
+        # เช็คว่าเป็นตัวอักษรภาษาอังกฤษหรือไม่
+        if char.isalpha():
+            # กำหนดค่าเริ่มต้นของ ASCII ว่าเป็นพิมพ์ใหญ่หรือพิมพ์เล็ก
+            base = ord('A') if char.isupper() else ord('a')
+            
+            # คำนวณการเลื่อนตำแหน่ง (ใช้ modulo 26 เพื่อให้วนกลับมา A ถ้าเกิน Z)
+            shifted_char = chr((ord(char) - base + k) % 26 + base)
+            result.append(shifted_char)
+        else:
+            # ถ้าไม่ใช่ตัวอักษรภาษาอังกฤษ (เช่น -, !, เว้นวรรค) ให้คงเดิมไว้
+            result.append(char)
+            
+    return "".join(result)
