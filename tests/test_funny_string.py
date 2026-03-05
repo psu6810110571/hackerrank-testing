@@ -24,3 +24,15 @@ class TestFunnyString(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, expected_output)
+
+    def test_funny_string_with_single_character_should_return_funny(self):
+        # Arrange
+        # Edge Case: มีตัวอักษรเดียว ลูปไม่ควรทำงานและตอบ Funny ได้อย่างปลอดภัย
+        s = "a"
+        expected_output = "Funny"
+        
+        # Act
+        result = funnyString(s)
+        
+        # Assert
+        self.assertEqual(result, expected_output)
