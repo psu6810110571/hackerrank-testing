@@ -38,3 +38,15 @@ class TestGridChallenge(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, expected_output)
+
+    def test_grid_challenge_with_single_column_multiple_rows_should_return_yes(self):
+        # Arrange
+        # Edge Case: มีแค่คอลัมน์เดียว เรียงจากบนลงล่างถูกต้อง
+        stub_grid = ["a", "b", "c"]
+        expected_output = "YES"
+        
+        # Act
+        result = gridChallenge(stub_grid)
+        
+        # Assert
+        self.assertEqual(result, expected_output)
