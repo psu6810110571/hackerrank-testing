@@ -46,3 +46,15 @@ class TestTwoCharacters(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, expected_output)
+
+    def test_alternate_with_single_character_should_return_0(self):
+        # Arrange
+        # Edge Case: มีตัวอักษรเดียว ไม่สามารถสร้าง alternating string ได้ ต้องตอบ 0
+        s = "a"
+        expected_output = 0
+        
+        # Act
+        result = alternate(s)
+        
+        # Assert
+        self.assertEqual(result, expected_output)
