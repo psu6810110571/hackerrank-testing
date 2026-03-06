@@ -32,3 +32,13 @@ class PrimeListTest(unittest.TestCase):
         
         # Assert: ต้องได้ผลลัพธ์เป็น False
         self.assertFalse(is_prime)
+
+    def test_give_negative_numbers_should_return_false(self):
+        # Arrange: กรณีเป็นเลขติดลบทั้งหมด
+        prime_list = [-1, -2, -3]
+        
+        # Act
+        is_prime = is_prime_list(prime_list)
+        
+        # Assert: ต้องได้ผลลัพธ์เป็น False
+        self.assertFalse(is_prime)
