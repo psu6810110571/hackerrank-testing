@@ -45,3 +45,14 @@ class TestFizzBuzz(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, "98")
+
+    def test_give_negative_15_should_return_fizzbuzz(self):
+        # Arrange
+        # Edge Case: กรณีเลขติดลบที่หารลงตัวทั้ง 3 และ 5
+        x = -15
+        
+        # Act
+        result = fizzbuzz(x)
+        
+        # Assert
+        self.assertEqual(result, "FizzBuzz")
