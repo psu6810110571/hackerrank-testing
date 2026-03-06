@@ -23,3 +23,14 @@ class TestFizzBuzz(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, "Buzz")
+
+    def test_give_15_should_return_fizzbuzz(self):
+        # Arrange
+        # กรณีหารลงตัวทั้ง 3 และ 5 (เช่น 15)
+        x = 15
+        
+        # Act
+        result = fizzbuzz(x)
+        
+        # Assert
+        self.assertEqual(result, "FizzBuzz")
