@@ -52,3 +52,15 @@ class TestGuessNumber(unittest.TestCase):
         
         # Assert: ทายถูกที่ขอบเขตล่างสุด
         self.assertEqual(result, "You win")
+
+    @patch('test_double.guess_number.random.randint')
+    def test_guess_boundary_high_correct_should_return_you_win(self, mock_randint):
+        # Arrange: ล็อกผลการสุ่มให้เป็นเลข 10 (ขอบเขตบนสุด)
+        mock_randint.return_value = 10
+        guess = 10 
+        
+        # Act
+        result = guess_number(guess)
+        
+        # Assert: ทายถูกที่ขอบเขตบนสุด
+        self.assertEqual(result, "You win")
