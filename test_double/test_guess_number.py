@@ -16,3 +16,15 @@ class TestGuessNumber(unittest.TestCase):
         
         # Assert: ทายถูก ต้องได้คำว่า "You win"
         self.assertEqual(result, "You win")
+
+    @patch('test_double.guess_number.random.randint')
+    def test_guess_too_low_should_return_too_low(self, mock_randint):
+        # Arrange: ล็อกผลการสุ่มให้เป็นเลข 5 เสมอ
+        mock_randint.return_value = 5
+        guess = 3 # เราทายเลข 3 ซึ่งน้อยกว่าเลขที่สุ่มได้
+        
+        # Act
+        result = guess_number(guess)
+        
+        # Assert: ทายน้อยไป ต้องได้คำว่า "Too low"
+        self.assertEqual(result, "Too low")
