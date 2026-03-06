@@ -36,3 +36,15 @@ class TestFunnyString(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, expected_output)
+
+    def test_funny_string_with_ab_should_return_funny(self):
+        # Arrange
+        # Edge Case: สตริงยาว 2 ตัวอักษรที่ติดกัน
+        s = "ab"
+        expected_output = "Funny"
+        
+        # Act
+        result = funnyString(s)
+        
+        # Assert
+        self.assertEqual(result, expected_output)
