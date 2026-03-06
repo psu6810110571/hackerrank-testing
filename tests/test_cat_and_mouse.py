@@ -41,3 +41,16 @@ class TestCatAndMouse(unittest.TestCase):
         
         # Assert: แมว A ใกล้กว่า จึงต้องคืนค่า "Cat A"
         self.assertEqual(result, "Cat A")
+
+    def test_all_at_same_position_should_return_mouse_c(self):
+        # Arrange: Edge Case กรณีแมวและหนูอยู่ที่จุดเดียวกันทั้งหมด (x=1, y=1, z=1)
+        # ระยะห่างคือ 0 เท่ากัน
+        x = 1
+        y = 1
+        z = 1
+        
+        # Act
+        result = cat_and_mouse(x, y, z)
+        
+        # Assert: แมวถึงพร้อมกัน (ตั้งแต่เริ่ม) หนูต้องรอด
+        self.assertEqual(result, "Mouse C")
