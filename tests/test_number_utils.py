@@ -12,3 +12,13 @@ class PrimeListTest(unittest.TestCase):
         
         # Assert
         self.assertTrue(is_prime)
+
+    def test_give_empty_list_should_return_false(self):
+        # Arrange: กรณีลิสต์ไม่มีข้อมูลเลย
+        prime_list = []
+        
+        # Act
+        is_prime = is_prime_list(prime_list)
+        
+        # Assert: ต้องได้ผลลัพธ์เป็น False
+        self.assertFalse(is_prime)
