@@ -34,3 +34,14 @@ class TestFizzBuzz(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, "FizzBuzz")
+
+    def test_give_98_should_return_98(self):
+        # Arrange
+        # กรณีหารไม่ลงตัวทั้ง 3 และ 5 ต้องคืนค่าเป็นตัวเลขนั้นในรูปแบบ String
+        x = 98
+        
+        # Act
+        result = fizzbuzz(x)
+        
+        # Assert
+        self.assertEqual(result, "98")
