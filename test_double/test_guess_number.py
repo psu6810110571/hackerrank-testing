@@ -40,3 +40,15 @@ class TestGuessNumber(unittest.TestCase):
         
         # Assert: ทายมากไป ต้องได้คำว่า "Too high"
         self.assertEqual(result, "Too high")
+
+    @patch('test_double.guess_number.random.randint')
+    def test_guess_boundary_low_correct_should_return_you_win(self, mock_randint):
+        # Arrange: ล็อกผลการสุ่มให้เป็นเลข 1 (ขอบเขตล่างสุด)
+        mock_randint.return_value = 1
+        guess = 1 
+        
+        # Act
+        result = guess_number(guess)
+        
+        # Assert: ทายถูกที่ขอบเขตล่างสุด
+        self.assertEqual(result, "You win")
