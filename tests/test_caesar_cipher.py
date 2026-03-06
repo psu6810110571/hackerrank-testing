@@ -52,3 +52,16 @@ class TestCaesarCipher(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, expected_output)
+
+    def test_caesar_cipher_with_symbols_only_should_return_same_symbols(self):
+        # Arrange
+        # Edge Case: มีแต่เครื่องหมายพิเศษ ล้วนๆ ต้องไม่ถูกเลื่อน
+        s = "!@#$%"
+        k = 5
+        expected_output = "!@#$%"
+        
+        # Act
+        result = caesarCipher(s, k)
+        
+        # Assert
+        self.assertEqual(result, expected_output)
