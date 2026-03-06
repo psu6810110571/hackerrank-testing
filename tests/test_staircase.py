@@ -32,3 +32,18 @@ class TestStaircase(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, expected_output)
+
+    def test_give_3_with_star_should_return_staircase(self):
+        # Arrange: กรณีเปลี่ยนสัญลักษณ์เป็นตัวอื่น (เช่น *)
+        n = 3
+        pattern = '*'
+        expected_output = \
+        "  *\n" + \
+        " **\n" + \
+        "***"
+        
+        # Act
+        result = staircase(n, pattern)
+        
+        # Assert
+        self.assertEqual(result, expected_output)
