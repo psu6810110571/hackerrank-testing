@@ -16,3 +16,19 @@ class TestStaircase(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, expected_output, f'Should be {expected_output}')
+
+    def test_give_4_with_hash_should_return_staircase(self):
+        # Arrange: กรณีบันได 4 ขั้น ตามสไลด์หน้า 13
+        n = 4
+        pattern = '#'
+        expected_output = \
+        "   #\n" + \
+        "  ##\n" + \
+        " ###\n" + \
+        "####"
+        
+        # Act
+        result = staircase(n, pattern)
+        
+        # Assert
+        self.assertEqual(result, expected_output)
