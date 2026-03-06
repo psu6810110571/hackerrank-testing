@@ -50,3 +50,15 @@ class TestGridChallenge(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, expected_output)
+
+    def test_grid_challenge_with_single_row_should_return_yes(self):
+        # Arrange
+        # Edge Case: มีแค่แถวเดียวแนวนอน
+        stub_grid = ['abcde']
+        expected_output = "YES"
+        
+        # Act
+        result = gridChallenge(stub_grid)
+        
+        # Assert
+        self.assertEqual(result, expected_output)
