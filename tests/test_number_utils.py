@@ -22,3 +22,13 @@ class PrimeListTest(unittest.TestCase):
         
         # Assert: ต้องได้ผลลัพธ์เป็น False
         self.assertFalse(is_prime)
+
+    def test_give_4_6_8_should_return_false(self):
+        # Arrange: กรณีตัวเลขไม่ใช่จำนวนเฉพาะทั้งหมด
+        prime_list = [4, 6, 8]
+        
+        # Act
+        is_prime = is_prime_list(prime_list)
+        
+        # Assert: ต้องได้ผลลัพธ์เป็น False
+        self.assertFalse(is_prime)
