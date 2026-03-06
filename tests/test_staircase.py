@@ -59,3 +59,15 @@ class TestStaircase(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, expected_output)
+
+    def test_give_31_should_return_empty_string(self):
+        # Arrange: กรณี n=31 ซึ่งเกินขอบเขต 0 < n <= 30
+        n = 31
+        pattern = '#'
+        expected_output = ""
+        
+        # Act
+        result = staircase(n, pattern)
+        
+        # Assert
+        self.assertEqual(result, expected_output)
