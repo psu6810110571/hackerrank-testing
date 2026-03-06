@@ -15,3 +15,16 @@ class TestCatAndMouse(unittest.TestCase):
         # Assert: Cat B (ที่ตำแหน่ง 2) ใกล้หนู C (ตำแหน่ง 3) มากกว่า 
         # จึงต้องคืนค่า "Cat B"
         self.assertEqual(result, "Cat B")
+
+    def test_mouse_escapes(self):
+        # Arrange: ตามสไลด์หน้า 21 (x=1, y=3, z=2)
+        # แมวทั้งสองตัวอยู่ห่างจากหนูเท่ากัน (ระยะทาง = 1)
+        x = 1
+        y = 3
+        z = 2
+        
+        # Act
+        result = cat_and_mouse(x, y, z)
+        
+        # Assert: หนูรอด เพราะแมวมาถึงพร้อมกันและตีกันเอง (ต้องคืนค่า "Mouse C")
+        self.assertEqual(result, "Mouse C")
