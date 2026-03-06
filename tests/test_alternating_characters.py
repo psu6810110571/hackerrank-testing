@@ -47,3 +47,15 @@ class TestAlternatingCharacters(unittest.TestCase):
         
         # Assert
         self.assertEqual(result, expected_output)
+
+    def test_alternating_characters_with_AAAB_should_return_2(self):
+        # Arrange
+        # Mixed Case: ตัวอักษรซ้ำกันแค่ช่วงแรก (ต้องลบ A ออก 2 ตัว)
+        s = "AAAB"
+        expected_output = 2
+        
+        # Act
+        result = alternatingCharacters(s)
+        
+        # Assert
+        self.assertEqual(result, expected_output)
