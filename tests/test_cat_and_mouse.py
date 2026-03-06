@@ -54,3 +54,17 @@ class TestCatAndMouse(unittest.TestCase):
         
         # Assert: แมวถึงพร้อมกัน (ตั้งแต่เริ่ม) หนูต้องรอด
         self.assertEqual(result, "Mouse C")
+
+    def test_negative_positions_should_work_correctly(self):
+        # Arrange: Edge Case กรณีตำแหน่งติดลบ
+        # แมว A อยู่ -5, แมว B อยู่ -2, หนูอยู่ -4
+        # แมว A ห่างหนู 1, แมว B ห่างหนู 2
+        x = -5
+        y = -2
+        z = -4
+        
+        # Act
+        result = cat_and_mouse(x, y, z)
+        
+        # Assert: แมว A ใกล้กว่า (ห่าง 1) ต้องได้ "Cat A"
+        self.assertEqual(result, "Cat A")
